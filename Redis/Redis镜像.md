@@ -1,16 +1,6 @@
 # Redis镜像
-
-## 文档
-
+## 构建流程
 ```shell
-cd $WORKDIR/dockerfile && mkdir redis && cd redis 
-
-# 如下所示
-vi Dockerfile
-
-# 如下所示
-vi entrypoint.sh
-
 docker build -t redis-5.0.9:v1.0 .
 
 # docker hub 创建仓库 whohow20094702/redis-5.0.9
@@ -40,45 +30,6 @@ whohow20094702/redis-5.0.9:v1.0
 
 docker exec -it redis sh -c 'redis-cli -r 1 -i 1 ping'
 #PONG
-```
-
-## Dockerfile
-```dockerfile
-FROM alpine:latest
-MAINTAINER whohow20094702 <whohow20094702@163.com>
-
-RUN apk upgrade --update && \
-    apk add redis && \
-    sed -i '/^daemonize/s/yes/no/g' /etc/redis.conf && \
-    sed -i 's/^logfile/#logfile/g' /etc/redis.conf
-
-COPY gosu /bin/gosu
-RUN ["chmod","+x","/bin/gosu"]
-
-ADD entrypoint.sh /entrypoint.sh
-RUN ["chmod","+x","/entrypoint.sh"]
-
-VOLUME /var/lib/redis
-EXPOSE 6379
-
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["start"]
-```
-
-## entrypoint.sh
-```shell
-#!/bin/sh
-set -e
-
-if [[ "${1}" == "start" ]]; then
-  echo "Starting Redis with defaults from /etc/redis.conf"
-  exec gosu redis:redis redis-server /etc/redis.conf
-elif [ "${1:0:1}" = "-" ]; then
-  echo "Starting Redis with cli-set options only, no default config."
-  exec gosu redis:redis redis-server $@
-fi
-
-exec "$@"
 ```
 
 ## gosu
