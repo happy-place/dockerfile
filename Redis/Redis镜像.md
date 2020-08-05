@@ -43,7 +43,6 @@ docker exec -it redis sh -c 'redis-cli -r 1 -i 1 ping'
 ```
 
 ## Dockerfile
-
 ```dockerfile
 FROM alpine:latest
 MAINTAINER whohow20094702 <whohow20094702@163.com>
@@ -66,7 +65,7 @@ ENTRYPOINT ["/entrypoint.sh"]
 CMD ["start"]
 ```
 
-## entrypoint.sh
+## entrypoint
 ```shell
 #!/bin/sh
 set -e
@@ -83,6 +82,7 @@ exec "$@"
 ```
 
 ## gosu
+[参考](## entrypoint)
 [gosu下载地址](https://github.com/happy-place/dockerfile/blob/master/Redis/gosu)
 
 *为什么要使用？*
@@ -100,7 +100,6 @@ su和sudo具有非常奇怪且经常令人讨厌的TTY和信号转发行为的�
 ```
 *如何使用?*
 
-[参考]('## entrypoint.sh')
 
 
 
