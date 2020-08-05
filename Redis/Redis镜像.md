@@ -82,7 +82,8 @@ exec "$@"
 ```
 
 ## gosu
-[参考](## entrypoint)
+[ref](## entrypoint)
+
 [gosu下载地址](https://github.com/happy-place/dockerfile/blob/master/Redis/gosu)
 
 *为什么要使用？*
