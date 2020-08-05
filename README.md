@@ -7,4 +7,4 @@ self-defined dockerfile
 * [Mysql 镜像](Mysql镜像.md)
 * [Kafka 镜像](Kafka镜像.md)
 * [Elasticsearch 镜像](Elasticsearch镜像.md)
-* [Redis 镜像](Redis镜像.md)
+* [Redis 镜像](./Redis/Redis镜像.md)
