@@ -101,7 +101,7 @@ su和sudo具有非常奇怪且经常令人讨厌的TTY和信号转发行为的�
 ```
 *如何使用?*
 
-[参考](entrypoint.sh)
+[参考](## entrypoint.sh)
 
 
 
