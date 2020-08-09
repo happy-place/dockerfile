@@ -3,6 +3,7 @@
 [参考](https://github.com/blacktop/docker-elasticsearch-alpine)
 
 ```shell
+# 注 jvm.options 中定义了最大最小内存(此镜像默认为126m，官方镜像为4g)
 docker build -t elasticsearch-6.8.11:v1.0 .
 
 # 本地镜像映射远程仓库
