@@ -33,8 +33,11 @@ curl http://localhost:9200/_cat/nodes/?v
 #ip         heap.percent ram.percent cpu load_1m load_5m load_15m node.role master name
 #172.17.0.2           13          89   1    0.00    0.05     0.08 mdi       *      IuWGL56
 
-# 辅助脚背 /usr/local/bin/elastic
-chmod +x /usr/local/bin/elastic
+docker exec -it elastic bash
+
+# 辅助脚本演示
+elastic insert student 1 '{"name":"tom"}'
+elastic search student 1
 ```
 
 
