@@ -107,7 +107,7 @@ docker rmi zookeeper-3.6.1:v1.0 whohow20094702/zookeeper-3.6.1:v1.0
 docker pull whohow20094702/zookeeper-3.6.1:v1.0
 
 docker images | grep zookeeper-3.6.1
-#whohow20094702/zookeeper-3.6.1  v1.0  4726e882f717  8 minutes ago   154MB
+#whohow20094702/zookeeper-3.6.1  v1.0  4726e882f717  8 minutes ago   102MB
 
 # 测试 zookeeper
 docker run -itd --name zookeeper whohow20094702/zookeeper-3.6.1:v1.0
