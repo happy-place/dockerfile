@@ -1,4 +1,4 @@
-*注*: 官方镜像mysql:5.7.26 提交偏小，且很好支持json格式。
+*注*: 官方镜像mysql:5.7.26 体积偏小，且很好支持json格式。
 ```shell
 docker pull mysql:5.7.26
 
