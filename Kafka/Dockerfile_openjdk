@@ -1,0 +1,13 @@
+# using alpine-glibc instead of alpine  is mainly because JDK relies on glibc
+FROM whohow20094702/openjdk-1.8:v1.0
+# author
+MAINTAINER whohow20094702 <whohow20094702@163.com>
+
+ADD kafka_2.12-2.5.0.tar.gz /opt/kafka_2.12-2.5.0
+
+ENV KAFKA_HOME /opt/kafka_2.12-2.5.0
+ENV PATH ${PATH}:${KAFKA_HOME}/bin
+
+WORKDIR /opt
+
+CMD ["bash","-c","cd /opt/kafka_2.12-2.5.0/bin && chmod +x server-prop-init.sh && server-prop-init.sh && kafka start"]
