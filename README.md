@@ -1,7 +1,7 @@
 # dockerfile
 self-defined dockerfile
 
-* [Bash 镜像](Bash镜像.md)
+* [Bash 镜像](./Bash/Bash镜像.md)
 * [JRE 镜像](JRE镜像.md)
 * [Zookeeper 镜像](Zookeeper镜像.md)
 * [Mysql 镜像](Mysql镜像.md)
