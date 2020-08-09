@@ -1,6 +1,6 @@
 # JRE镜像
 
-*下载 [jdk](https://www.java.com/en/download/manual.jsp)*
+*下载 [jdk Linux-x64](https://www.java.com/en/download/manual.jsp)*
 
 *未瘦身*
 
