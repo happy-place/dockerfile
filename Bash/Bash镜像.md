@@ -1,3 +1,4 @@
+```shell
 # 构建镜像
 docker build -t alpine-glibc:v1.0 .
 
@@ -16,3 +17,4 @@ docker rmi alpine-glibc:v1.0 whohow20094702/alpine-glibc:v1.0
 docker images | grep alpine-glibc
 #whohow20094702/alpine-glibc  v1.0  36b3e8ae1ace 25 minutes ago    22.7MB
 #jeanblanchard/alpine-glibc  latest b18af330677b  2 months ago     17.3MB
+```
