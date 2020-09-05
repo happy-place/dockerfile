@@ -176,7 +176,8 @@ docker images | grep kafka
 #canal/kafka-sink                   1.0  f9d58f06fe81      2 weeks ago         474MB
 #wurstmeister/kafka              latest  988f4a6ca13c      13 months ago       421MB
 
-# 先启动 zookeeper
+# 方案1： 指定网络启动
+## 先启动 zookeeper
 docker run -itd \
 --name zookeeper \
 --net canal-net \
@@ -190,7 +191,7 @@ docker exec -it zookeeper bash -c 'zookeeper status'
 #Client port found: 2181. Client address: localhost.
 #Mode: standalone
 
-# 启动 kafka
+## 启动 kafka
 docker run -itd \
 --name kafka \
 --net canal-net \
@@ -205,4 +206,24 @@ docker exec -it kafka bash -c 'cat $KAFKA_HOME/config/server.properties | grep z
 
 docker exec -it kafka bash -c 'kafka create_topic test 3 1'
 # Created topic test.
+
+# 方案2：默认网卡运行
+## 启动zookeeper
+docker run -itd \
+--name zookeeper \
+-p 2181:2181 \
+whohow20094702/zookeeper-3.6.1:v1.0
+
+## 启动kafka
+docker run -itd \
+--name kafka \
+--link zookeeper \
+-p 9092:9092 \
+-e ZOOKEEPER_HOST=zookeeper:2181 \
+-e LOG_RETENTION_HOURS=200 \
+whohow20094702/kafka_2.12-2.5.0:v1.0
 ```
+
+
+
+
