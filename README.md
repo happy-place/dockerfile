@@ -9,3 +9,4 @@ self-defined dockerfile
 * [Elasticsearch 镜像](./Elastic/Elasticsearch镜像.md)
 * [Kibana 镜像](./Kibana/Kibana镜像.md)
 * [Redis 镜像](./Redis/Redis镜像.md)
+* [Clickhouse分布式部署](./Clickhouse/Clickhouse分布式.md)
